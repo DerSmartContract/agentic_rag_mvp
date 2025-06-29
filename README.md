@@ -81,14 +81,17 @@ Das System speichert alle Anfragen und zugehörigen Kontexte automatisch in `dat
 
 ---
 
-## Geplante Erweiterungen
+## 🔭 Weiterentwicklung & Roadmap
 
-| Funktion                     | Status         |
-|------------------------------|----------------|
-| Vektorbasierter Speicher     | In Planung     |
-| Web-Oberfläche (Next.js)     | In Entwicklung |
-| ReAct-Agentenplanung         | Konzeptphase   |
-| Docker / CI/CD Deployment    | Unterstützt    |
-| Authentifizierungsmodul      | Geplant        |
+Wir entwickeln das System iterativ weiter in Richtung einer agentenbasierten Plattform mit Selbstüberwachung, Planungslogik und adaptivem Langzeitgedächtnis.
 
+| Modul / Funktion                     | Status         | Beschreibung |
+|--------------------------------------|----------------|--------------|
+| 🧠 Vektorbasierter Speicher (ChromaDB) | In Planung     | Semantische Ähnlichkeit statt reinem Textvergleich |
+| 🧩 ReAct-Agentenplanung                | Konzeptphase   | Reasoning + Acting in verketteten Agentenabläufen |
+| 💻 Web-Oberfläche (Next.js / Streamlit)| In Entwicklung | Nutzeroberfläche für Queries, Logs, Memory        |
+| 🐳 Docker / CI/CD Deployment          | Bereit         | Containerisierung & GitHub Actions                |
+| 🔐 Authentifizierungsmodul (JWT)      | Geplant        | Sichere API-Nutzung & Mehrbenutzerbetrieb         |
+| 🧪 Unit-Tests & Coverage              | In Entwicklung | Testabdeckung für Aggregator, Memory & Agents     |
+| 📊 Metrik-Logging & Tracing           | Implementiert  | Logging aller Agentenentscheidungen und Antworten |
 ---

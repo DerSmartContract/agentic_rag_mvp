@@ -1,7 +1,7 @@
 # utils/rag_model.py
-
 import os
 from dotenv import load_dotenv
+import logging
 
 # Laden der Umgebungsvariablen
 load_dotenv()
@@ -24,8 +24,11 @@ if MODE == "OPENAI":
                 temperature=0.3,
                 max_tokens=800
             )
-            return response.choices[0].message.content.strip()
+            answer = response.choices[0].message.content.strip()
+            logging.info("[RAG OPENAI] Antwort erfolgreich generiert.")
+            return answer
         except Exception as e:
+            logging.error(f"[RAG OPENAI] Fehler bei API-Aufruf: {e}")
             return f"❌ Fehler bei OpenAI API: {e}"
 
 # === LOCAL-MODE (LM Studio) ===
@@ -54,8 +57,11 @@ elif MODE == "LOCAL":
             response = requests.post(endpoint, json=data, timeout=15)
             response.raise_for_status()
             result = response.json()
-            return result["choices"][0]["message"]["content"].strip()
+            answer = result["choices"][0]["message"]["content"].strip()
+            logging.info("[RAG LOCAL] Antwort erfolgreich generiert.")
+            return answer
         except Exception as e:
+            logging.error(f"[RAG LOCAL] Fehler bei LM Studio API: {e}")
             return f"❌ Fehler bei LM Studio API: {e}"
 
 # === FAILSAFE ===
