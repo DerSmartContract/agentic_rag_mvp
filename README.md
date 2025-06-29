@@ -39,6 +39,8 @@ agentic_rag_mvp/
 ```bash
 git clone https://github.com/<dein-benutzername>/agentic-rag-mvp.git
 cd agentic-rag-mvp
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
